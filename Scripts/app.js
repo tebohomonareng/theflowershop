@@ -38,7 +38,7 @@ app.controller('RegistrationController', function ($scope, $http, $window) {
 app.controller('CustomerTable', function ($scope, $http, AppApi) {
     $http({
         method: "GET",
-        url: "http://localhost:44790/api/Customers"
+        url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Customers"
     }).then(function mySuccess(response) {
         $scope.customerdetail = response.data;
     }, function myError(response) {
@@ -47,7 +47,7 @@ app.controller('CustomerTable', function ($scope, $http, AppApi) {
     $scope.LoadTable = function () {
         $http({
             method: "GET",
-            url: "http://localhost:44790/api/Customers"
+            url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Customers"
         }).then(function mySuccess(response) {
             $scope.customerdetail = response.data;
         }, function myError(response) {
@@ -68,7 +68,7 @@ app.controller('CustomerTable', function ($scope, $http, AppApi) {
 app.controller('AdminProductTable', function ($scope, $http, $cookieStore, $cookies, userPersistenceService, AppApi) {
     $http({
         method: "GET",
-        url: "http://localhost:44790/api/Products"
+        url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Products"
     }).then(function mySuccess(response) {
         $scope.productsData = response.data;
 
@@ -81,7 +81,7 @@ app.controller('AdminProductTable', function ($scope, $http, $cookieStore, $cook
 
     $http({
         method: "GET",
-        url: "http://localhost:44790/api/Products"
+        url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Products"
     }).then(function mySuccess(response) {
         $scope.productsData = response.data;
 
@@ -97,7 +97,7 @@ app.controller('ProductTable', function ($scope, $http, $cookieStore, $cookies, 
     var formdata = new FormData();
     $http({
         method: "GET",
-        url: "http://localhost:44790/api/Products"
+        url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Products"
     }).then(function mySuccess(response) {
         $scope.productsData = response.data;
 
@@ -111,7 +111,7 @@ app.controller('ProductTable', function ($scope, $http, $cookieStore, $cookies, 
     $scope.LoadTable = function () {
         $http({
             method: "GET",
-            url: "http://localhost:44790/api/Products"
+            url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Products"
         }).then(function mySuccess(response) {
             $scope.productsData = response.data;
 
@@ -125,7 +125,7 @@ app.controller('ProductTable', function ($scope, $http, $cookieStore, $cookies, 
 
     $http({
         method: "GET",
-        url: "http://localhost:44790/api/Suppliers"
+        url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Suppliers"
     }).then(function mySuccess(response) {
         $scope.names = response.data;
 
@@ -204,7 +204,7 @@ app.controller('ProductTable', function ($scope, $http, $cookieStore, $cookies, 
     $scope.AddProduct = function () {
         $http({
             method: 'POST',
-            url: 'http://localhost:44790/api/Products',
+            url: 'http://theflowershop.gearhostpreview.com/api/Suppliers/api/Products',
             data: formdata,
             headers: {
                 'Content-Type': undefined
@@ -280,7 +280,7 @@ app.controller('StoreController', ['$scope', '$cookies', function ($scope, $cook
 
     $http({
         method: "GET",
-        url: "http://localhost:44790/api/Products"
+        url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Products"
     }).then(function mySuccess(response) {
         $scope.products = response.data;
         }, function myError(response) {
@@ -398,7 +398,7 @@ app.controller('LoginController', function ($scope, $http, AppApi, $rootScope, $
 app.controller('DriverTable', function ($scope, $http, AppApi, CurrentDriver) {
     $http({
         method: "GET",
-        url: "http://localhost:44790/api/Drivers"
+        url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Drivers"
     }).then(function mySuccess(response) {
         $scope.driverdetail = response.data;
     }, function myError(response) {
@@ -410,7 +410,7 @@ app.controller('DriverTable', function ($scope, $http, AppApi, CurrentDriver) {
     $scope.LoadTable = function () {
         $http({
             method: "GET",
-            url: "http://localhost:44790/api/Drivers"
+            url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Drivers"
         }).then(function mySuccess(response) {
             $scope.driverdetail = response.data;
         }, function myError(response) {
@@ -517,7 +517,7 @@ app.controller('CustomerDetail', function ($scope, $http, AppApi, $rootScope, $w
     $scope.LoadTable = function () {
         $http({
             method: "GET",
-            url: "http://localhost:44790/api/Customers"
+            url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Customers"
         }).then(function mySuccess(response) {
             $scope.customerdetail = response.data;
         }, function myError(response) {
@@ -604,7 +604,7 @@ app.controller('AdminController', function ($http,$scope, userPersistenceService
 
     $http({
         method: "GET",
-        url: "http://localhost:44790/api/Drivers"
+        url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Drivers"
     }).then(function mySuccess(response) {
         $scope.driverdetail = response.data;
     }, function myError(response) {
@@ -721,7 +721,7 @@ app.controller('CheckoutController', function ($rootScope,$scope, $http, $cookie
 
     $http({
         method: "get",
-        url: "http://localhost:44790/api/Drivers",
+        url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Drivers",
         headers: { "Content-Type": "application/json" }
     }).then(function success(response)
     {
@@ -737,7 +737,7 @@ app.controller('CheckoutController', function ($rootScope,$scope, $http, $cookie
         $scope.saveOrder = function () {
             $http({
                 method: "post",
-                url: "http://localhost:44790/api/CardInformations",
+                url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/CardInformations",
                 dataType: "json",
                 data: {
                     Address: $scope.address,
@@ -759,7 +759,7 @@ app.controller('CheckoutController', function ($rootScope,$scope, $http, $cookie
                 //Insert to  order
                 $http({
                     method: "post",
-                    url: "http://localhost:44790/api/Orders",
+                    url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Orders",
                     dataType: "json",
                     data: {
                         DriverID: $scope.driverID,
@@ -840,7 +840,7 @@ app.controller('SupplierBatch', function ($scope, $http, AppApi, $cookieStore, $
 app.controller('SupplierTable', function ($scope, $http, AppApi, $cookieStore, $cookies, CurrentSupplier) {
     $http({
         method: "GET",
-        url: "http://localhost:44790/api/Products"
+        url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Products"
     }).then(function mySuccess(response) {
         $scope.productsData = response.data;
 
@@ -868,7 +868,7 @@ app.controller('DriverDashboardController', function ($scope, $http, AppApi, $co
  
     $http({
         method: "GET",
-        url: "http://localhost:44790/api/Orders"
+        url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Orders"
     }).then(function mySuccess(response) {
         $scope.productData = response.data;
         angular.forEach($scope.productData, function (key, value) {
@@ -924,7 +924,7 @@ app.controller('MyOrderController', function ($scope, $http, userPersistenceServ
 
     $http({
         method: "GET",
-        url: "http://localhost:44790/api/Orders"
+        url: "http://theflowershop.gearhostpreview.com/api/Suppliers/api/Orders"
     }).then(function mySuccess(response) {
         $scope.productData = response.data;
         angular.forEach($scope.productData, function (key, value) {
