@@ -16,7 +16,7 @@ namespace NetApp_Final_.Models
     public partial class theflowershopEntities : DbContext
     {
         public theflowershopEntities()
-            : base("name=theflowershopEntities")
+            : base("name=theflowershopEntities1")
         {
         }
     
