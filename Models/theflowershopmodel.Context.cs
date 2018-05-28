@@ -15,6 +15,7 @@ namespace NetApp_Final_.Models
     
     public partial class theflowershopEntities : DbContext
     {
+        DbContext.Configuration.ProxyCreationEnabled = false;
         public theflowershopEntities()
             : base("name=theflowershopEntities1")
         {
