@@ -14,7 +14,7 @@ namespace NetApp_Final_.Controllers
 {
     public class CardInformationsController : ApiController
     {
-        private theflowershopEntities2 db = new theflowershopEntities2();
+        private theflowershopEntities db = new theflowershopEntities();
 
         // GET: api/CardInformations
         public IQueryable<CardInformation> GetCardInformations()

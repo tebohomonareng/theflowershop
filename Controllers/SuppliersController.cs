@@ -14,7 +14,7 @@ namespace NetApp_Final_.Controllers
 {
     public class SuppliersController : ApiController
     {
-        private theflowershopEntities2 db = new theflowershopEntities2();
+        private theflowershopEntities db = new theflowershopEntities();
 
         // GET: api/Suppliers
         public IQueryable<Supplier> GetSuppliers()
@@ -24,9 +24,9 @@ namespace NetApp_Final_.Controllers
 
         // GET: api/Suppliers/5
         [ResponseType(typeof(Supplier))]
-        public IHttpActionResult GetSupplier(string Email, string Password)
+        public IHttpActionResult GetSupplier(string id)
         {
-            Supplier supplier = db.Suppliers.Where(Supplier => Supplier.SupplierEmail.Equals(Email) && Supplier.Password.Equals(Password)).FirstOrDefault();
+            Supplier supplier = db.Suppliers.Find(id);
             if (supplier == null)
             {
                 return NotFound();

@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -141,15 +142,25 @@
     <Content Include="Content\sweetalert.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\EntityModel.Context.tt">
+    <Content Include="Models\theflowershopmodel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EntityModel.edmx</DependentUpon>
-      <LastGenOutput>EntityModel.Context.cs</LastGenOutput>
+      <DependentUpon>theflowershopmodel.edmx</DependentUpon>
+      <LastGenOutput>theflowershopmodel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\EntityModel.tt">
+    <Content Include="Models\theflowershopmodel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EntityModel.edmx</DependentUpon>
-      <LastGenOutput>EntityModel.cs</LastGenOutput>
+      <DependentUpon>theflowershopmodel.edmx</DependentUpon>
+      <LastGenOutput>theflowershopmodel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\theflowershopmodel7.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>theflowershopmodel7.edmx</DependentUpon>
+      <LastGenOutput>theflowershopmodel7.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\theflowershopmodel7.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>theflowershopmodel7.edmx</DependentUpon>
+      <LastGenOutput>theflowershopmodel7.cs</LastGenOutput>
     </Content>
     <Content Include="Pages\Account\Cart.html" />
     <Content Include="Pages\Account\Checkout.html" />
@@ -250,12 +261,19 @@
     <Content Include="fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="fonts\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="fonts\font-awesome-4.7.0\scss\_variables.scss" />
-    <EntityDeploy Include="Models\EntityModel.edmx">
+    <EntityDeploy Include="Models\theflowershopmodel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EntityModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>theflowershopmodel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\EntityModel.edmx.diagram">
-      <DependentUpon>EntityModel.edmx</DependentUpon>
+    <Content Include="Models\theflowershopmodel.edmx.diagram">
+      <DependentUpon>theflowershopmodel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\theflowershopmodel7.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>theflowershopmodel7.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\theflowershopmodel7.edmx.diagram">
+      <DependentUpon>theflowershopmodel7.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\app.js" />
@@ -267,63 +285,100 @@
     <Content Include="Scripts\Services.js" />
     <Content Include="Scripts\style.js" />
     <Content Include="Scripts\sweetalert-dev.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdministratorsController.cs" />
     <Compile Include="Controllers\CardInformationsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
-    <Compile Include="Controllers\DeliveryController.cs" />
     <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\OrderDetailsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\SupplierProductsController.cs" />
     <Compile Include="Controllers\SuppliersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Administrator.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>theflowershopmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Administrators.cs">
+      <DependentUpon>theflowershopmodel7.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CardInformation.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>theflowershopmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CardInformations.cs">
+      <DependentUpon>theflowershopmodel7.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>theflowershopmodel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\demo.cs" />
+    <Compile Include="Models\Customers.cs">
+      <DependentUpon>theflowershopmodel7.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Driver.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>theflowershopmodel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EntityModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityModel.Context.tt</DependentUpon>
+    <Compile Include="Models\Drivers.cs">
+      <DependentUpon>theflowershopmodel7.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EntityModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EntityModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\GetSupplierProduct.cs" />
     <Compile Include="Models\Order.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>theflowershopmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OrderDetail.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>theflowershopmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderDetails.cs">
+      <DependentUpon>theflowershopmodel7.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Orders.cs">
+      <DependentUpon>theflowershopmodel7.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>theflowershopmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Products.cs">
+      <DependentUpon>theflowershopmodel7.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Supplier.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>theflowershopmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Suppliers.cs">
+      <DependentUpon>theflowershopmodel7.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\theflowershopmodel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>theflowershopmodel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\theflowershopmodel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>theflowershopmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\theflowershopmodel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>theflowershopmodel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\theflowershopmodel7.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>theflowershopmodel7.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\theflowershopmodel7.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>theflowershopmodel7.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\theflowershopmodel7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>theflowershopmodel7.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

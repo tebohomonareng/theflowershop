@@ -14,7 +14,7 @@ namespace NetApp_Final_.Controllers
 {
     public class AdministratorsController : ApiController
     {
-        private theflowershopEntities2 db = new theflowershopEntities2();
+        private theflowershopEntities db = new theflowershopEntities();
 
         // GET: api/Administrators
         public IQueryable<Administrator> GetAdministrators()
@@ -24,9 +24,9 @@ namespace NetApp_Final_.Controllers
 
         // GET: api/Administrators/5
         [ResponseType(typeof(Administrator))]
-        public IHttpActionResult GetAdministrator(string Email, string Password)
+        public IHttpActionResult GetAdministrator(string id)
         {
-            Administrator administrator = db.Administrators.Where(Administrator => Administrator.Email.Equals(Email) && Administrator.Password.Equals(Password)).FirstOrDefault();
+            Administrator administrator = db.Administrators.Find(id);
             if (administrator == null)
             {
                 return NotFound();

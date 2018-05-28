@@ -14,7 +14,7 @@ namespace NetApp_Final_.Controllers
 {
     public class DriversController : ApiController
     {
-        private theflowershopEntities2 db = new theflowershopEntities2();
+        private theflowershopEntities db = new theflowershopEntities();
 
         // GET: api/Drivers
         public IQueryable<Driver> GetDrivers()
@@ -24,9 +24,9 @@ namespace NetApp_Final_.Controllers
 
         // GET: api/Drivers/5
         [ResponseType(typeof(Driver))]
-        public IHttpActionResult GetDriver(string Email, string Password)
+        public IHttpActionResult GetDriver(string id)
         {
-            Driver driver = db.Drivers.Where(Driver => Driver.Email.Equals(Email) && Driver.Password.Equals(Password)).FirstOrDefault();
+            Driver driver = db.Drivers.Find(id);
             if (driver == null)
             {
                 return NotFound();

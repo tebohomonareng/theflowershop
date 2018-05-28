@@ -14,7 +14,7 @@ namespace NetApp_Final_.Controllers
 {
     public class CustomersController : ApiController
     {
-        private theflowershopEntities2 db = new theflowershopEntities2();
+        private theflowershopEntities db = new theflowershopEntities();
 
         // GET: api/Customers
         public IQueryable<Customer> GetCustomers()
@@ -24,9 +24,9 @@ namespace NetApp_Final_.Controllers
 
         // GET: api/Customers/5
         [ResponseType(typeof(Customer))]
-        public IHttpActionResult GetCustomer(string Email, string Password)
+        public IHttpActionResult GetCustomer(string id)
         {
-            Customer customer = db.Customers.Where(Customer => Customer.Email.Equals(Email) && Customer.Password.Equals(Password)).FirstOrDefault();
+            Customer customer = db.Customers.Find(id);
             if (customer == null)
             {
                 return NotFound();
@@ -129,10 +129,5 @@ namespace NetApp_Final_.Controllers
         {
             return db.Customers.Count(e => e.CustomerID == id) > 0;
         }
-        //[Route("api/GetDelivery")]
-        //public IEnumerable<GetDelivery> GetDelivery()
-        //{
-
-        //}
     }
 }
