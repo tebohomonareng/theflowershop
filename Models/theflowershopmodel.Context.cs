@@ -15,10 +15,11 @@ namespace NetApp_Final_.Models
     
     public partial class theflowershopEntities : DbContext
     {
-        DbContext.Configuration.ProxyCreationEnabled = false;
+        
         public theflowershopEntities()
             : base("name=theflowershopEntities1")
         {
+        base.Configuration.ProxyCreationEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
