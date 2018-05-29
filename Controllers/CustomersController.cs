@@ -14,7 +14,8 @@ namespace NetApp_Final_.Controllers
 {
     public class CustomersController : ApiController
     {
-        private theflowershopEntities db = new theflowershopEntities();
+        private theflowershopEntities1 db = new theflowershopEntities1();
+        db.Configuration.ProxyCreationEnabled = false;
 
         // GET: api/Customers
         public IQueryable<Customer> GetCustomers()
