@@ -731,6 +731,7 @@ app.controller('CheckoutController', function ($rootScope,$scope, $http, $cookie
             driversID.push(item.DriverID);
         });
         var driverid = driversID[Math.floor(Math.random() * driversID.length)];
+        var d = new Date();
         console.log(driverid);
         $scope.driverID = driverid;
         //Insert to card table 
@@ -767,6 +768,7 @@ app.controller('CheckoutController', function ($rootScope,$scope, $http, $cookie
                         Name: $scope.name,
                         Surname: $scope.surname,
                         Email: $scope.email,
+                        OrderDate: d,
                         Address: $scope.address,
                         OrderStatus: "Pending"},
                     headers: { "Content-Type": "application/json" }
